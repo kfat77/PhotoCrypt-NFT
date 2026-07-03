@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PhotoCrypt-NFT/static/css/main.2f590c88.css",
+    "main.js": "/PhotoCrypt-NFT/static/js/main.fd9a7d39.js",
+    "index.html": "/PhotoCrypt-NFT/index.html",
+    "main.2f590c88.css.map": "/PhotoCrypt-NFT/static/css/main.2f590c88.css.map",
+    "main.fd9a7d39.js.map": "/PhotoCrypt-NFT/static/js/main.fd9a7d39.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f590c88.css",
+    "static/js/main.fd9a7d39.js"
+  ]
+}
