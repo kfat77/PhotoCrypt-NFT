@@ -72,11 +72,19 @@ function Home() {
               🔐 去中心化照片真实性验证
             </div>
             <h1 className="heading-hero" style={{ marginBottom: '24px' }}>
-              让每一张照片<br />
+              打开摄像头<br />
+              <span className="text-gradient">拍摄真实照片</span>
+            </h1>
               <span className="text-gradient">真实可信</span>
             </h1>
             <p className="body-large" style={{ maxWidth: '640px', margin: '0 auto 48px' }}>
-              PhotoCrypt 将数字水印、隐写术与区块链技术结合，
+              用手机摄像头直接拍摄，照片自动嵌入数字水印和设备签名。
+              每一张照片都是真实拍摄的原始记录，不可伪造、不可篡改。
+            </p>
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link to="/encrypt" className="btn btn-primary btn-lg">
+                📷 打开摄像头拍摄
+              </Link>
               为每张照片生成不可篡改的数字身份证明，
               即使被压缩、裁剪或截图，仍能验证其原始来源。
             </p>

@@ -14,7 +14,7 @@ function App() {
 
   const navLinks = [
     { path: '/', label: '首页' },
-    { path: '/encrypt', label: '加密照片' },
+    { path: '/encrypt', label: '📷 拍照' },
     { path: '/verify', label: '验证照片' },
     { path: '/about', label: '关于' },
   ];
