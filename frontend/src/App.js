@@ -43,7 +43,7 @@ function App() {
           </div>
 
           <a
-            href="https://github.com/your-username/PhotoCrypt-NFT"
+            href="https://github.com/kfat77/PhotoCrypt-NFT"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-cta"

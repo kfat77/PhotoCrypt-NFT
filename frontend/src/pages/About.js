@@ -172,7 +172,7 @@ function About() {
               如果你有兴趣改进功能或报告问题，欢迎到 GitHub 提交 Issue 或 PR。
             </p>
             <a
-              href="https://github.com/your-username/PhotoCrypt-NFT"
+              href="https://github.com/kfat77/PhotoCrypt-NFT"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-lg"
