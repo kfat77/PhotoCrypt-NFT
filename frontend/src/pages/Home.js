@@ -32,18 +32,18 @@ function Home() {
   const steps = [
     {
       num: '01',
-      title: '拍摄照片',
-      desc: '用相机或手机拍摄，系统自动提取 EXIF 元数据、生成时间戳。',
+      title: '打开摄像头拍摄',
+      desc: '使用手机摄像头直接拍摄，无需上传，真实拍摄即刻记录。',
     },
     {
       num: '02',
       title: '设备签名',
-      desc: 'Ed25519 私钥对照片哈希签名，生成不可伪造的认证信息。',
+      desc: '系统自动对照片哈希签名，生成不可伪造的认证信息。',
     },
     {
       num: '03',
       title: '嵌入水印',
-      desc: 'LSB + DWT 双重水印将签名隐藏嵌入像素，肉眼不可见。',
+      desc: 'LSB 水印将签名隐藏嵌入像素，肉眼不可见，但可提取验证。',
     },
     {
       num: '04',
@@ -52,13 +52,13 @@ function Home() {
     },
     {
       num: '05',
-      title: 'IPFS 存储',
-      desc: '加密照片上传至 IPFS 去中心化网络，获得不可篡改的内容地址。',
+      title: '下载加密照片',
+      desc: '下载带水印的 PNG 照片，随时可以验证其真实性。',
     },
     {
       num: '06',
-      title: '铸造 NFT',
-      desc: '将 CID、感知哈希、签名、时间戳铸造为 NFT，永久记录上链。',
+      title: '铸造 NFT（可选）',
+      desc: '将照片数据铸造为 NFT，永久记录上链，供任何人验证。',
     },
   ];
 
@@ -69,13 +69,11 @@ function Home() {
         <div className="container">
           <div className="animate-fade-in-up">
             <div className="badge badge-blue" style={{ marginBottom: '32px' }}>
-              🔐 去中心化照片真实性验证
+              📸 用手机摄像头拍摄真实照片
             </div>
             <h1 className="heading-hero" style={{ marginBottom: '24px' }}>
               打开摄像头<br />
               <span className="text-gradient">拍摄真实照片</span>
-            </h1>
-              <span className="text-gradient">真实可信</span>
             </h1>
             <p className="body-large" style={{ maxWidth: '640px', margin: '0 auto 48px' }}>
               用手机摄像头直接拍摄，照片自动嵌入数字水印和设备签名。
@@ -85,15 +83,8 @@ function Home() {
               <Link to="/encrypt" className="btn btn-primary btn-lg">
                 📷 打开摄像头拍摄
               </Link>
-              为每张照片生成不可篡改的数字身份证明，
-              即使被压缩、裁剪或截图，仍能验证其原始来源。
-            </p>
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link to="/encrypt" className="btn btn-primary btn-lg">
-                开始加密照片 →
-              </Link>
               <Link to="/verify" className="btn btn-secondary btn-lg">
-                验证照片真伪
+                🔍 验证照片真伪
               </Link>
             </div>
           </div>
@@ -128,26 +119,26 @@ function Home() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <div style={{ textAlign: 'center', flex: '1 1 200px' }}>
                   <div className="icon-box blue" style={{ margin: '0 auto 16px' }}>📸</div>
-                  <p style={{ fontWeight: 600, marginBottom: '4px' }}>原始照片</p>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>JPEG / PNG</p>
+                  <p style={{ fontWeight: 600, marginBottom: '4px' }}>摄像头拍摄</p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>手机/电脑摄像头</p>
                 </div>
                 <div style={{ fontSize: '2rem', color: 'var(--text-muted)' }}>→</div>
                 <div style={{ textAlign: 'center', flex: '1 1 200px' }}>
                   <div className="icon-box purple" style={{ margin: '0 auto 16px' }}>🔏</div>
                   <p style={{ fontWeight: 600, marginBottom: '4px' }}>签名 + 水印</p>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Ed25519 + LSB/DWT</p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>SHA-256 + LSB</p>
                 </div>
                 <div style={{ fontSize: '2rem', color: 'var(--text-muted)' }}>→</div>
                 <div style={{ textAlign: 'center', flex: '1 1 200px' }}>
                   <div className="icon-box green" style={{ margin: '0 auto 16px' }}>🎨</div>
                   <p style={{ fontWeight: 600, marginBottom: '4px' }}>感知哈希</p>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>pHash / dHash / aHash</p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>pHash 内容指纹</p>
                 </div>
                 <div style={{ fontSize: '2rem', color: 'var(--text-muted)' }}>→</div>
                 <div style={{ textAlign: 'center', flex: '1 1 200px' }}>
-                  <div className="icon-box orange" style={{ margin: '0 auto 16px' }}>⛓️</div>
-                  <p style={{ fontWeight: 600, marginBottom: '4px' }}>NFT 上链</p>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Ethereum / Polygon</p>
+                  <div className="icon-box orange" style={{ margin: '0 auto 16px' }}>✅</div>
+                  <p style={{ fontWeight: 600, marginBottom: '4px' }}>真实性验证</p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>随时可验证</p>
                 </div>
               </div>
             </div>
@@ -201,7 +192,7 @@ function Home() {
               六步完成 <span className="text-gradient-blue">全链路验证</span>
             </h2>
             <p className="body-large" style={{ maxWidth: '560px', margin: '0 auto' }}>
-              从按下快门到链上存证，整个过程自动完成，无需人工干预
+              从打开摄像头到下载加密照片，整个过程在浏览器中完成
             </p>
           </div>
 
@@ -273,17 +264,17 @@ function Home() {
               }}
             />
             <h2 className="heading-lg" style={{ marginBottom: '20px', position: 'relative' }}>
-              准备好验证你的照片了吗？
+              准备好拍摄真实照片了吗？
             </h2>
             <p className="body-large" style={{ marginBottom: '40px', maxWidth: '500px', margin: '0 auto 40px', position: 'relative' }}>
-              立即上传照片，体验 PhotoCrypt 的完整加密与验证流程
+              立即打开手机摄像头，体验 PhotoCrypt 的真实性保护
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', position: 'relative' }}>
               <Link to="/encrypt" className="btn btn-primary btn-lg">
-                开始加密 →
+                📷 打开摄像头拍摄 →
               </Link>
               <Link to="/verify" className="btn btn-secondary btn-lg">
-                验证照片
+                🔍 验证照片
               </Link>
             </div>
           </div>
