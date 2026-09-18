@@ -10,8 +10,8 @@
     "frontend": "cd frontend && npm start"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "hardhat": "^2.19.0"
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "hardhat": "^3.17.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.0",
